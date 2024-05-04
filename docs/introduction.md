@@ -6,7 +6,7 @@ _webinar_ is a [Python](https://www.python.org/) web application built using [Dj
 
 ## Project Overview
 
-TODO: add content ...
+This provides a place for people to register for a webinar.
 
 ## Read the docs
 
