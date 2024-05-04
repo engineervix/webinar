@@ -1,11 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const autoprefixer = require("autoprefixer");
-const cssnano = require("cssnano");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const postcssCustomProperties = require("postcss-custom-properties");
-const sass = require("sass");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const StylelintPlugin = require("stylelint-webpack-plugin");
 
@@ -206,7 +202,7 @@ const options = {
       failOnError: false,
       lintDirtyModulesOnly: true,
       emitWarning: true,
-      extensions: ["scss"],
+      extensions: ["css"],
     }),
   ],
   module: {
@@ -233,25 +229,6 @@ const options = {
             loader: "postcss-loader",
             options: {
               sourceMap: true,
-              postcssOptions: {
-                plugins: () => [
-                  autoprefixer(),
-                  postcssCustomProperties(),
-                  cssnano({
-                    preset: "default",
-                  }),
-                ],
-              },
-            },
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-              implementation: sass,
-              sassOptions: {
-                outputStyle: "compressed",
-              },
             },
           },
         ],
@@ -323,7 +300,8 @@ const webpackConfig = (environment, argv) => {
     options.devServer = {
       // Enable gzip compression for everything served.
       compress: true,
-      hot: false,
+      watchFiles: [`./${projectRoot}/**/*.html`],
+      hot: true,
       client: {
         logging: "error",
         // Shows a full-screen overlay in the browser when there are compiler errors.

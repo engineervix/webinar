@@ -5,7 +5,7 @@
     * H031 = Consider adding meta keywords.
 {% endcomment %}
 {# djlint:off H030,H031 #}
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
     {# You can add your analytics here #}
     <title>
@@ -46,18 +46,15 @@
     {% endblock extra_css %}
   </head>
   {# djlint:on #}
-  <body class="d-flex flex-column h-100 {% block body_class %}{% endblock body_class %}">
+  <body class="{% block body_class %}{% endblock body_class %}">
     {% if messages %}
-      <div class="container">
+      <div>
         {% for message in messages %}
-          <div class="row py-3">
-            <div class="col">
-              <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-                <span class="fs-5">{{ message }}</span>
-                <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="alert"
-                        aria-label="Close"></button>
+          <div>
+            <div>
+              <div class="{% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                <span>{{ message }}</span>
+                <button type="button" aria-label="Close"></button>
               </div>
             </div>
           </div>
@@ -65,16 +62,12 @@
       </div>
     {% endif %}
     <header class="{% block header_class %}{% endblock header_class %}">
-      {% include "includes/navbar.html" %}
       {% block promo_block %}
       {% endblock promo_block %}
     </header>
     {% block content %}
     {% endblock content %}
     {% include "includes/footer.html" %}
-    {# Bootstrap Core JavaScript #}
-    <script src="{% static 'vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    {# Vendor scripts can be added here #}
     {# Main Script #}
     <script src="{% static 'js/main.min.js' %}"></script>
     {% block extra_js %}
