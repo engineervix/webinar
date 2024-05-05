@@ -5,7 +5,7 @@
     * H031 = Consider adding meta keywords.
 {% endcomment %}
 {# djlint:off H030,H031 #}
-<html lang="en">
+<html lang="en" class="min-h-screen">
   <head>
     {# You can add your analytics here #}
     <title>
@@ -45,7 +45,7 @@
     {% endblock extra_css %}
   </head>
   {# djlint:on #}
-  <body class="{% block body_class %}{% endblock body_class %}">
+  <body class="min-h-screen">
     {% if messages %}
       <div>
         {% for message in messages %}
@@ -60,7 +60,7 @@
         {% endfor %}
       </div>
     {% endif %}
-    <header class="{% block header_class %}{% endblock header_class %}">
+    <header>
       {% block promo_block %}
       {% endblock promo_block %}
     </header>

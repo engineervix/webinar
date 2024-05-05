@@ -17,12 +17,6 @@
   <meta property="og:locale:alternate" content="en_GB" />
   <meta property="og:locale:alternate" content="en_US" />
 {% endblock extrameta %}
-{% block extra_css %}
-{% endblock extra_css %}
-{% block body_class %}
-{% endblock body_class %}
-{% block header_class %}
-{% endblock header_class %}
 {% block promo_block %}
   {# djlint:off H021 #}
   {# image credits: https://unsplash.com/photos/green-bokeh-lights-FewHpO4VC9Y #}
@@ -47,7 +41,9 @@
             </div>
           </div>
         </div>
-        <button class="mt-5 btn btn-accent sm:hidden" type="button">
+        <a href="#register"
+           class="mt-5 btn btn-accent sm:hidden"
+           data-register-btn>
           Register
           {# https://heroicons.com/ #}
           <svg xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +54,7 @@
                class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
           </svg>
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -86,7 +82,7 @@
       </p>
       {# djlint:on #}
     </div>
-    <div id="registration-form" class="px-10">
+    <div id="register" class="px-10">
       <div class="grid md:grid-cols-2 gap-4">
         <label class="input input-bordered flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg"
