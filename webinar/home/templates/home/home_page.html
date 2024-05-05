@@ -20,20 +20,48 @@
 {% block extra_css %}
 {% endblock extra_css %}
 {% block body_class %}
-  template--home
 {% endblock body_class %}
 {% block header_class %}
-  hero--home bg-dark text-light
 {% endblock header_class %}
 {% block promo_block %}
-  <div>
-    <div>
+  {# djlint:off H021 #}
+  {# image credits: https://unsplash.com/photos/green-bokeh-lights-FewHpO4VC9Y #}
+  <div class="hero place-items-start min-h-80"
+       style="background-image: url({% static 'img/hero-lg.jpg' %})">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content lg:pl-10 text-neutral-content">
       <div>
-        <h1>Welcome to webinar Homepage</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div class="badge badge-accent uppercase">Webinar</div>
+        <h1 class="mb-5 text-5xl font-bold">Introduction to Wagtail</h1>
+        <div class="card w-80 bg-sky-500/20 text-neutral-content sm:mt-10">
+          <div class="card-body">
+            <div>
+              <strong>Date</strong>: Thursday, May 30<sup>th</sup>, 2024
+            </div>
+            <div>
+              <strong>Time</strong>: 6PM
+              <a class="link tooltip tooltip-bottom"
+                 href="https://time.is/CAT"
+                 data-tip="Central African Time">CAT</a>
+            </div>
+          </div>
+        </div>
+        <button class="mt-5 btn btn-accent sm:hidden">
+          Register
+          {# https://heroicons.com/ #}
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
+  {# djlint:on #}
 {% endblock promo_block %}
 {% block content %}
   <main>
