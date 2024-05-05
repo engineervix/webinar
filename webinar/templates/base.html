@@ -11,14 +11,14 @@
     <title>
       {% block title %}
         {% block title_prefix %}
-          webinar »
+          Webinar »
         {% endblock title_prefix %}
         {{ page_title }}
         {% block title_suffix %}
         {% endblock title_suffix %}
       {% endblock title %}
     </title>
-    <!-- Meta -->
+    {# Meta #}
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
@@ -38,7 +38,6 @@
           sizes="16x16"
           href="{% static 'ico/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'ico/site.webmanifest' %}">
-    {# Vendor stylesheets can be added here #}
     {# Main Stylesheet #}
     <link href="{% static 'css/main.min.css' %}" rel="stylesheet">
     {% block extra_css %}
