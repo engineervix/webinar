@@ -64,8 +64,6 @@ DJANGO_APPS = [
     # "django.contrib.gis",
 ]
 THIRD_PARTY_APPS = [
-    "crispy_forms",  # https://github.com/django-crispy-forms/django-crispy-forms
-    "crispy_bootstrap5",  # https://github.com/django-crispy-forms/crispy-bootstrap5
     "django_extensions",  # https://github.com/django-extensions/django-extensions
     # "django_rq",  # https://github.com/rq/django-rq
     "mjml",  # https://github.com/liminspace/django-mjml
@@ -245,12 +243,6 @@ MANAGERS = ADMINS
 # ------------------------------------------------------------------------------
 # SETTINGS FOR THIRD PARTY APPS
 # ------------------------------------------------------------------------------
-
-# Django-crispy-forms
-# ------------------------------------------------------------------------------
-# https://github.com/django-crispy-forms/django-crispy-forms
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # django-mjml
 # ------------------------------------------------------------------------------
