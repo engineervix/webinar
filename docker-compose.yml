@@ -33,28 +33,28 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
-  # redis:
-  #   image: redis:7-alpine
+  redis:
+    image: redis:7-alpine
 
-  # worker:
-  #   build:
-  #     context: .
-  #     args:
-  #       DEVELOPMENT: 1
-  #     target: dev
-  #   command: python manage.py rqworker default
-  #   env_file:
-  #     - .env
-  #   volumes:
-  #     - ./:/home/django/app/
-  #   environment:
-  #     - DJANGO_SETTINGS_MODULE=webinar.settings.dev
-  #     - NODE_ENV=development
-  #     - RQ_QUEUE=redis://redis:6379/0
-  #   depends_on:
-  #     - web
-  #     - redis
-  #     - maildev
+  worker:
+    build:
+      context: .
+      args:
+        DEVELOPMENT: 1
+      target: dev
+    command: python manage.py rqworker default
+    env_file:
+      - .env
+    volumes:
+      - ./:/home/django/app/
+    environment:
+      - DJANGO_SETTINGS_MODULE=webinar.settings.dev
+      - NODE_ENV=development
+      - RQ_QUEUE=redis://redis:6379/0
+    depends_on:
+      - web
+      - redis
+      - maildev
 
   maildev:
     image: maildev/maildev
