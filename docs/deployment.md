@@ -49,7 +49,11 @@ AWS_S3_REGION_NAME      # e.g. eu-central-003
 AWS_SECRET_ACCESS_KEY   # application key for your bucket
 AWS_STORAGE_BUCKET_NAME
 
-## 2. Transactional Email Providers
+## 2. HCaptcha (https://www.hcaptcha.com/)
+HCAPTCHA_SECRET
+HCAPTCHA_SITEKEY
+
+## 3. Transactional Email Providers
 ## (configure django-anymail with a selected provider, or use built-in SMTP Backend)
 
 ### Example 1: Mailjet
@@ -67,7 +71,7 @@ EMAIL_USE_SSL           # e.g. True
 EMAIL_HOST_USER         # e.g. it-support@example.co.zm
 EMAIL_HOST_PASSWORD
 
-## 3. Error Tracking with Sentry (https://sentry.io/)
+## 4. Error Tracking with Sentry (https://sentry.io/)
 SENTRY_DSN              # e.g. https://12345678abc@example.ingest.sentry.io/123456
 SENTRY_ENVIRONMENT      # e.g. production
 ```
@@ -151,7 +155,11 @@ sudo dokku config:set --no-restart webinar AWS_S3_REGION_NAME=eu-central-003
 sudo dokku config:set --no-restart webinar AWS_SECRET_ACCESS_KEY=applicationkeyforyourbucket
 sudo dokku config:set --no-restart webinar AWS_STORAGE_BUCKET_NAME=yourbucket
 
-### B. Transactional Email Providers (choose your preferred provider, or use the built-in SMTP Backend)
+### B. HCaptcha (https://www.hcaptcha.com/)
+sudo dokku config:set --no-restart cccw HCAPTCHA_SECRET=foosecret
+sudo dokku config:set --no-restart cccw HCAPTCHA_SITEKEY=foositekey
+
+### C. Transactional Email Providers (choose your preferred provider, or use the built-in SMTP Backend)
 
 #### Example 1: Mailjet
 sudo dokku config:set --no-restart webinar MAILJET_API_KEY=whatever
@@ -168,7 +176,7 @@ sudo dokku config:set --no-restart webinar EMAIL_USE_SSL=True
 sudo dokku config:set --no-restart webinar EMAIL_HOST_USER=it-support@example.co.zm
 sudo dokku config:set --no-restart webinar EMAIL_HOST_PASSWORD=password
 
-### C. Error Tracking with Sentry (https://sentry.io/)
+### D. Error Tracking with Sentry (https://sentry.io/)
 sudo dokku config:set --no-restart webinar SENTRY_DSN=https://12345678abc@example.ingest.sentry.io/123456
 sudo dokku config:set --no-restart webinar SENTRY_ENVIRONMENT=production
 
