@@ -65,7 +65,8 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "django_extensions",  # https://github.com/django-extensions/django-extensions
-    # "django_rq",  # https://github.com/rq/django-rq
+    "django_rq",  # https://github.com/rq/django-rq
+    "hcaptcha",  # https://github.com/AndrejZbin/django-hcaptcha
     "mjml",  # https://github.com/liminspace/django-mjml
     "widget_tweaks",  # https://github.com/jazzband/django-widget-tweaks
 ]
@@ -258,12 +259,15 @@ MJML_CHECK_CMD_ON_STARTUP = False
 # django-RQ
 # ------------------------------------------------------------------------------
 # https://github.com/rq/django-rq
-# RQ_QUEUES = {
-#     "default": {"URL": env("RQ_QUEUE", default="redis://redis:6379/0")},
-# }
+RQ_QUEUES = {
+    "default": {"URL": env("RQ_QUEUE", default="redis://redis:6379/0")},
+}
 
 # ------------------------------------------------------------------------------
 # CUSTOM SETTINGS
 # ------------------------------------------------------------------------------
 ADMIN_URL = env("ADMIN_URL")  # Django Admin URL.
+BASE_URL = env("BASE_URL")  # Base URL for the site.
+RQ_URL = env("RQ_URL")  # URL for the RQ dashboard.
+APPRISE_NTFY_URL = env("APPRISE_NTFY_URL")  # to send notifications to site admin
 LIST_OF_EMAIL_RECIPIENTS: List[str] = []
