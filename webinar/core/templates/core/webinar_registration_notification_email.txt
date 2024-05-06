@@ -1,0 +1,43 @@
+Howdy {{ name }} 👋,
+
+This is to confirm that you have successfully registered for the **{{ event }}** webinar. Here are the details, for your reference:
+
+## Date and Time ⌚
+
+{% with datetime|date:"l jS F, Y" as formatted_date %}
+{{ formatted_date }} at {{ datetime|time:"H:i" }} hrs {{ datetime|date:"e" }}
+{% endwith %}
+
+## Link 🔗
+
+{{ url }}
+
+## Add to your calendar 🗓️
+
+{% comment "Use any of the following tools to generate the links" %} - https://parcel.io/tools/calendar - https://www.labnol.org/calendar/
+{% endcomment %}
+
+- [Google](https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240530T160000Z%2F20240530T170000Z&details=In%20this%20webinar%2C%20we%20will%20delve%20into%20the%20fundamentals%20of%20Wagtail%2C%20exploring%20its%20key%20features%2C%20functionalities%2C%20and%20advantages%20for%20developers%20and%20content%20creators%20alike.&{{generic_encoded_location}}&text=Webinar%20%C2%BB%20Introduction%20to%20Wagtail)
+- [Outlook](https://outlook.live.com/calendar/0/action/compose?allday=false&body=In%20this%20webinar%2C%20we%20will%20delve%20into%20the%20fundamentals%20of%20Wagtail%2C%20exploring%20its%20key%20features%2C%20functionalities%2C%20and%20advantages%20for%20developers%20and%20content%20creators%20alike.&enddt=2024-05-30T17%3A00%3A00%2B00%3A00&{{generic_encoded_location}}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2024-05-30T16%3A00%3A00%2B00%3A00&subject=Webinar%20%C2%BB%20Introduction%20to%20Wagtail)
+- [Office 365](https://outlook.office.com/calendar/action/compose?allday=false&body=In%20this%20webinar%2C%20we%20will%20delve%20into%20the%20fundamentals%20of%20Wagtail%2C%20exploring%20its%20key%20features%2C%20functionalities%2C%20and%20advantages%20for%20developers%20and%20content%20creators%20alike.&enddt=2024-05-30T17%3A00%3A00%2B00%3A00&{{generic_encoded_location}}&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2024-05-30T16%3A00%3A00%2B00%3A00&subject=Webinar%20%C2%BB%20Introduction%20to%20Wagtail)
+- [Yahoo! Calendar](https://calendar.yahoo.com/?desc=In%20this%20webinar%2C%20we%20will%20delve%20into%20the%20fundamentals%20of%20Wagtail%2C%20exploring%20its%20key%20features%2C%20functionalities%2C%20and%20advantages%20for%20developers%20and%20content%20creators%20alike.&dur=&et=20240530T170000Z&{{yahoo_encoded_location}}&st=20240530T160000Z&title=Webinar%20%C2%BB%20Introduction%20to%20Wagtail&v=60)
+
+## Description 📃
+
+[Wagtail](https://wagtail.org/) is a leading open-source [Python](https://www.python.org/) Content Management System ([CMS](https://en.wikipedia.org/wiki/Content_management_system)) trusted by organizations such as Google, NASA, Mozilla, MIT, and Oxfam, among many others. Renowned for its flexibility, user-friendliness, and robust features, Wagtail builds on top of [Django](https://www.djangoproject.com/) — a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+
+In this webinar, we will delve into the fundamentals of Wagtail, exploring its key features, functionalities, and advantages for developers and content creators alike.
+
+Join in to learn more about how you can leverage Wagtail to manage your digital content and associated workflows. You don't need to be a developer or to know Python or Django — everybody is welcome!
+
+---
+
+Looking forward to seeing you there!
+
+Cheers,
+
+— Victor
+
+---
+
+_P.S. Please refrain from replying to this email as it is auto-generated. If you believe you received this email in error, kindly [inform me](mailto:{{contact}})._
