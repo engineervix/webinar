@@ -7,5 +7,6 @@ module.exports = {
   daisyui: {
     themes: false,
   },
+  safelist: [{ pattern: /alert-+/ }],
   plugins: [require("daisyui")],
 };
