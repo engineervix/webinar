@@ -156,8 +156,8 @@ sudo dokku config:set --no-restart webinar AWS_SECRET_ACCESS_KEY=applicationkeyf
 sudo dokku config:set --no-restart webinar AWS_STORAGE_BUCKET_NAME=yourbucket
 
 ### B. HCaptcha (https://www.hcaptcha.com/)
-sudo dokku config:set --no-restart cccw HCAPTCHA_SECRET=foosecret
-sudo dokku config:set --no-restart cccw HCAPTCHA_SITEKEY=foositekey
+sudo dokku config:set --no-restart webinar HCAPTCHA_SECRET=foosecret
+sudo dokku config:set --no-restart webinar HCAPTCHA_SITEKEY=foositekey
 
 ### C. Transactional Email Providers (choose your preferred provider, or use the built-in SMTP Backend)
 
