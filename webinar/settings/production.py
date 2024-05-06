@@ -28,11 +28,11 @@ CACHES = {
     },
 }
 
-# RQ_QUEUES = {
-#     "default": {
-#         "USE_REDIS_CACHE": "default",
-#     },
-# }
+RQ_QUEUES = {
+    "default": {
+        "USE_REDIS_CACHE": "default",
+    },
+}
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
@@ -127,13 +127,10 @@ MEDIA_URL = f"https://{aws_s3_domain}/files/"
 INSTALLED_APPS += ["anymail"]  # noqa F405
 # https://docs.djangoproject.com/en/5.0/ref/settings/#email-backend
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
-# https://anymail.readthedocs.io/en/stable/esps/sendgrid/
-EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
+# https://anymail.dev/en/stable/esps/brevo/
+EMAIL_BACKEND = "anymail.backends.brevo.EmailBackend"
 ANYMAIL = {
-    "SENDGRID_API_KEY": env("SENDGRID_API_KEY"),  # noqa F405
-    "SENDGRID_GENERATE_MESSAGE_ID": env("SENDGRID_GENERATE_MESSAGE_ID"),  # noqa F405
-    "SENDGRID_MERGE_FIELD_FORMAT": env("SENDGRID_MERGE_FIELD_FORMAT"),  # noqa F405
-    "SENDGRID_API_URL": env("SENDGRID_API_URL", default="https://api.sendgrid.com/v3/"),  # noqa F405
+    "BREVO_API_KEY": env("BREVO_API_KEY"),  # noqa F405
 }
 
 if len(getaddresses([env("EMAIL_RECIPIENTS")])) == 1:  # noqa F405
@@ -152,7 +149,7 @@ SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)  # noqa F4
 # https://docs.djangoproject.com/en/5.0/ref/settings/#email-subject-prefix
 EMAIL_SUBJECT_PREFIX = env(  # noqa F405
     "DJANGO_EMAIL_SUBJECT_PREFIX",
-    default="[Webinar]",
+    default="[Webinar] ",
 )
 
 # LOGGING
@@ -166,10 +163,10 @@ LOGGING = {
     "disable_existing_loggers": True,
     "formatters": {
         "verbose": {"format": "%(levelname)s %(asctime)s %(module)s " "%(process)d %(thread)d %(message)s"},
-        # "rq_console": {
-        #     "format": "%(asctime)s %(message)s",
-        #     "datefmt": "%H:%M:%S",
-        # },
+        "rq_console": {
+            "format": "%(asctime)s %(message)s",
+            "datefmt": "%H:%M:%S",
+        },
     },
     "handlers": {
         "console": {
@@ -177,12 +174,12 @@ LOGGING = {
             "class": "logging.StreamHandler",
             "formatter": "verbose",
         },
-        # "rq_console": {
-        #     "level": "DEBUG",
-        #     "class": "rq.logutils.ColorizingStreamHandler",
-        #     "formatter": "rq_console",
-        #     "exclude": ["%(asctime)s"],
-        # },
+        "rq_console": {
+            "level": "DEBUG",
+            "class": "rq.logutils.ColorizingStreamHandler",
+            "formatter": "rq_console",
+            "exclude": ["%(asctime)s"],
+        },
     },
     "root": {"level": "INFO", "handlers": ["console"]},
     "loggers": {
@@ -198,7 +195,7 @@ LOGGING = {
             "handlers": ["console"],
             "propagate": False,
         },
-        # "rq.worker": {"handlers": ["rq_console"], "level": "DEBUG"},
+        "rq.worker": {"handlers": ["rq_console"], "level": "DEBUG"},
     },
 }
 
@@ -225,3 +222,9 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True,
 )
+
+
+# hcaptcha
+# ------------------------------------------------------------------------------
+HCAPTCHA_SITEKEY = env.str("HCAPTCHA_SITEKEY", default="")  # noqa F405
+HCAPTCHA_SECRET = env.str("HCAPTCHA_SECRET", default="")  # noqa F405

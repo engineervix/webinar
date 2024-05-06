@@ -12,7 +12,7 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path("", HomeView.as_view(), name="home"),
     # Django-RQ
-    # path("dj-rq/", include("django_rq.urls")),
+    path(settings.RQ_URL, include("django_rq.urls")),
 ]
 
 
