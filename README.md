@@ -153,3 +153,11 @@ mkdocs serve
 The documentation will be available at: <http://127.0.0.1:8001/>
 
 ---
+
+## TODO
+
+- [ ] Optimize Tailwind setup
+- [ ] Toggle light/dark mode
+- [ ] Google Sheets API
+- [ ] Tests
+- [ ] Update docs
