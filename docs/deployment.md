@@ -139,6 +139,11 @@ sudo dokku config:set --no-restart webinar ADMIN_URL=admin/
 sudo dokku config:set --no-restart webinar CSRF_TRUSTED_ORIGINS=https://app.example.co.zm
 sudo dokku config:set --no-restart webinar DJANGO_SECRET_KEY=abcdefghijklmnopqrstuvwxyz1234567890
 
+# Redis and RQ
+sudo dokku config:set --no-restart webinar REDIS_KEY_PREFIX=fooprefix
+sudo dokku config:set --no-restart webinar RQ_QUEUE=...set-this-to-the-REDIS_URL
+sudo dokku config:set --no-restart webinar RQ_URL=django-rq/
+
 ## Docker-related settings
 sudo dokku config:set --no-restart webinar PORT=8000
 
@@ -166,7 +171,7 @@ sudo dokku config:set --no-restart webinar MAILJET_API_KEY=whatever
 sudo dokku config:set --no-restart webinar MAILJET_SECRET_KEY=whatever
 
 #### Example 2: Brevo
-sudo dokku config:set --no-restart webinar SENDINBLUE_API_KEY=whatever
+sudo dokku config:set --no-restart webinar BREVO_API_KEY=whatever
 
 #### Example 3: SMTP
 sudo dokku config:set --no-restart webinar EMAIL_HOST=smtp.example.co.zm
@@ -179,6 +184,9 @@ sudo dokku config:set --no-restart webinar EMAIL_HOST_PASSWORD=password
 ### D. Error Tracking with Sentry (https://sentry.io/)
 sudo dokku config:set --no-restart webinar SENTRY_DSN=https://12345678abc@example.ingest.sentry.io/123456
 sudo dokku config:set --no-restart webinar SENTRY_ENVIRONMENT=production
+
+### E. Notifications with Apprise and ntfy (see https://github.com/caronc/apprise/wiki/Notify_ntfy)
+sudo dokku config:set --no-restart webinar APPRISE_NTFY_URL=ntfy://{token}@{hostname}/{targets}
 
 # 7. customize Docker Build-time configuration variables
 ## https://dokku.com/docs/deployment/builders/dockerfiles/#build-time-configuration-variables

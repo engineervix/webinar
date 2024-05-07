@@ -2,7 +2,7 @@
 
 ## Backups
 
-Ensure that you run regular backups of the database. If you're using Dokku, you will see from the [Deployment](./deployment.md) section that we configure automatic periodic backups to a private Backblaze bucket. If, for instance, something went wrong with your server and you had to do a redeployment, you can restore your database from a backup as follows (assuming your postgres database is called `postgres-webinar`)
+Ensure that you run regular backups of the database. If you're using Dokku, you will see from the [Deployment](./deployment.md) section that we configure automatic periodic backups to a private Backblaze bucket. If, for instance, something went wrong with your server and you had to do a redeployment, you can restore your database from a backup as follows (assuming your postgres database is called `postgres-webinar`):
 
 ```bash
 # NOTE: your database backup will probably be gzipped, you must extract it

@@ -2,7 +2,7 @@
 
 ## What's required
 
-To install Node.js on the host machine you could use tools like [fnm](https://github.com/Schniz/fnm), [`volta`](https://volta.sh/) and so on. Once you have Node.js 18 installed simply run `npm install` in the project root to install the dependencies.
+To install Node.js on the host machine you could use tools like [fnm](https://github.com/Schniz/fnm), [`volta`](https://volta.sh/) and so on. Once you have Node.js 20 installed simply run `npm install` in the project root to install the dependencies.
 
 ## Starting afresh
 
@@ -52,10 +52,6 @@ To only build assets for either development or production you can use
 
 ## Further details of key packages included
 
-### Dependencies
-
-- [bootstrap 5](https://getbootstrap.com/docs/5.3/getting-started/introduction/) – Powerful, extensible, and feature-packed frontend toolkit.
-
 ### Development Dependencies
 
 - **autoprefixer** - adds vendor prefixes as necessary for the browsers defined in `browserslist` in the npm config https://www.npmjs.com/package/autoprefixer
@@ -63,6 +59,7 @@ To only build assets for either development or production you can use
 - **copy-webpack-plugin** - Used to sync images from `assets` to `static`
 - **css-loader** – add support for Webpack to load stylesheets.
 - **cssnano** – minify CSS with safe optimisations - https://cssnano.co/.
+- **daisyui** – adds component class names to Tailwind CSS so you can make beautiful websites faster than ever.
 - **eslint** - lint your javascript https://www.npmjs.com/package/eslint
 - **eslint-config-prettier** - Turns off all rules that are unnecessary or might conflict with [Prettier](https://github.com/prettier/prettier) - https://github.com/prettier/eslint-config-prettier
 - **eslint-plugin-prettier** - ESLint plugin for Prettier formatting - https://github.com/prettier/eslint-plugin-prettier
@@ -72,6 +69,6 @@ To only build assets for either development or production you can use
 - **postcss-custom-properties** - polyfill for CSS custom properties - https://www.npmjs.com/package/postcss-custom-properties
 - **stylelint** - Linting for styles - https://stylelint.io
 - **stylelint-config-standard-scss** - The standard shareable SCSS config for Stylelint - https://www.npmjs.com/package/stylelint-config-standard-scss
-- **sass-loader** - integrate Sass preprocessing into Webpack’s styles loading.
+- **tailwindcss** – A utility-first CSS framework
 - **webpack** - Bundler for js files (can do much more too) - https://www.npmjs.com/package/webpack https://webpack.js.org/concepts/
 - **webpack-cli** - Provides a set of tools to improve the setup of custom webpack configuration - https://www.npmjs.com/package/webpack-cli

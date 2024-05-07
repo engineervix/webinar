@@ -36,7 +36,6 @@ Using Postgres and Django together offers many benefits:
 
 - Django provides a number of data types that will only work with Postgres.
 - Django has `django.contrib.postgres` to make database operations on Postgres.
-- Applications that make use of vector similarity search need to use Postgres (with the [pgvector](https://github.com/pgvector/pgvector) extension).
 - Postgres has the richest set of features that are supported by Django.
 
 ???+ info
@@ -59,7 +58,7 @@ Sending emails is an important part of _webinar_, and we want to ensure that we 
 
 As indicated in the project's README, _webinar_ uses [maildev](https://github.com/maildev/maildev) during development to test emails. In production, we recommend using [django-anymail](https://github.com/anymail/django-anymail) and is configuring it with a suitable transactional email service provider, such as [Brevo](https://www.brevo.com/pricing/), [Mailjet](https://www.mailjet.com/pricing/), [Mailgun](https://www.mailgun.com/pricing/), [Sendgrid](https://sendgrid.com/en-us/pricing), [Postmark](https://postmarkapp.com/pricing) and so on.
 
-With so many options for this, the choice is really dependent on the client's preferences and budget. [Mailjet](https://www.mailjet.com/pricing/) is relatively easy to setup, plus it has a [generous free tier](https://www.mailjet.com/pricing/) – you can send 200 emails per day (6,000 emails/month) for free. If you need to send more emails, then the next plan costs $15/month (15,000 emails/month, no daily limit). [Brevo](https://www.brevo.com/pricing/) has an even more generous free tier at 300 emails per day! The next plan is also $15/month, but allows for up to 20,000 emails/month.
+With so many options for this, the choice is really dependent on the your preferences and budget. [Mailjet](https://www.mailjet.com/pricing/) is relatively easy to setup, plus it has a [generous free tier](https://www.mailjet.com/pricing/) – you can send 200 emails per day (6,000 emails/month) for free. If you need to send more emails, then the next plan costs $15/month (15,000 emails/month, no daily limit). [Brevo](https://www.brevo.com/pricing/) has an even more generous free tier at 300 emails per day! The next plan is also $15/month, but allows for up to 20,000 emails/month.
 
 Whichever provider you settle for, check the [django-anymail](https://github.com/anymail/django-anymail) docs on how to configure the specified provider. You'll obviously have to update _django-anymail_'s `extras` parameter in `pyproject.toml`, and [update the project dependencies accordingly](https://realpython.com/dependency-management-python-poetry/#handle-poetrylock).
 

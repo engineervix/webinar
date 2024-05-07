@@ -2,6 +2,9 @@
 
 > A simple webinar registration management tool, with calendar integration and instant organizer notifications.
 
+[![Continuous Integration](https://github.com/engineervix/webinar/actions/workflows/main.yml/badge.svg)](https://github.com/engineervix/webinar/actions/workflows/main.yml)
+[![Docs](https://github.com/engineervix/webinar/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/engineervix/webinar/actions/workflows/gh-pages.yml)
+
 [![python3](https://img.shields.io/badge/python-3.12-brightgreen.svg)](https://python.org/)
 [![Node v20](https://img.shields.io/badge/Node-v20-teal.svg)](https://nodejs.org/en/blog/release/v20.0.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
@@ -21,7 +24,7 @@
   - [Commits, Releases and Changelogs](#commits-releases-and-changelogs)
   - [Tips](#tips)
 - [Project Technical Documentation](#project-technical-documentation)
-- [Credits](#credits)
+- [TODO](#todo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -137,7 +140,7 @@ For the first release, you can also supply the `--major` argument and this will 
 
 - Run `invoke -l` to see all available [Invoke](https://www.pyinvoke.org/) tasks. These are defined in the [tasks.py](tasks.py) file.
 - You'll want to setup [pre-commit](https://pre-commit.com/) by running `pre-commit install` followed by `pre-commit install --hook-type commit-msg`. Optionally run `pre-commit run --all-files` to make sure your pre-commit setup is okay.
-- You'll probably also want to install Node.js 18 on your machine, together with the dependencies. We recommend using [fnm](https://github.com/Schniz/fnm) or [volta](https://volta.sh/) to simplify managing Node.js versions on your machine.
+- You'll probably also want to install Node.js 20 on your machine, together with the dependencies. We recommend using [fnm](https://github.com/Schniz/fnm) or [volta](https://volta.sh/) to simplify managing Node.js versions on your machine.
 
 ## Project Technical Documentation
 
@@ -155,8 +158,8 @@ The documentation will be available at: <http://127.0.0.1:8001/>
 
 ## TODO
 
-- [ ] Optimize Tailwind setup
 - [ ] Toggle light/dark mode
-- [ ] Google Sheets API
-- [ ] Tests
+- [ ] Optimize Tailwind setup
+- [ ] Google Sheets integration
+- [ ] Write more tests
 - [ ] Update docs
