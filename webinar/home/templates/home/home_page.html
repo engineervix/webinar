@@ -184,8 +184,7 @@
 {% block extra_js %}
   {% if messages and webinar %}
     {{ webinar.atcb_config|json_script:"atcbConfig" }}
-    <script type="text/javascript"
-            src="{% static 'vendors/add-to-calendar-button/atcb.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/atcb.min.js' %}"></script>
     <script type="text/javascript">
       const atcbConfig = JSON.parse(document.getElementById('atcbConfig').textContent);
       const button = document.querySelector('#add-to-calendar');

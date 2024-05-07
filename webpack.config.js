@@ -164,6 +164,10 @@ const options = {
   entry: {
     // multiple entries can be added here
     main: `./${projectRoot}/assets/js/main.js`,
+    atcb: path.resolve(
+      __dirname,
+      "node_modules/add-to-calendar-button/dist/atcb.js",
+    ),
   },
   output: {
     path: path.resolve(`./${projectRoot}/static/`),
