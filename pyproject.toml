@@ -8,7 +8,7 @@ description = "A simple webinar registration management tool, with calendar inte
 name = "webinar"
 packages = [{ include = "webinar" }]
 readme = "README.md"
-version = "0.0.0"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
 # Core

@@ -1,6 +1,6 @@
 {
   "name": "webinar",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A simple webinar registration management tool, with calendar integration and instant organizer notifications.",
   "author": "Victor Miti",
   "license": "BSD-3-Clause",
