@@ -182,6 +182,9 @@ jobs:
           echo "DEBUG=False" >> .env
           echo "ALLOWED_HOSTS=" >> .env
           echo "BASE_URL=www.example.com" >> .env
+          echo "ADMIN_URL=fooadmin/" >> .env
+          echo "RQ_URL=foourl" >> .env
+          echo "APPRISE_NTFY_URL=foourl" >> .env
           python manage.py collectstatic --noinput --clear
 
       - name: Test with pytest
