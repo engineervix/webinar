@@ -6,7 +6,7 @@ FROM node:20.12-bookworm as frontend-builder
 
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY package*.json .babelrc.js webpack.config.js ./
+COPY package*.json .babelrc.js webpack.config.js postcss.config.js tailwind.config.js ./
 RUN npm ci --no-optional --no-audit --progress=false --network=host
 
 COPY ./webinar/assets ./webinar/assets
