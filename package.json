@@ -86,7 +86,7 @@
       "scss/at-import-partial-extension": null
     },
     "ignoreFiles": [
-      "*.min.css",
+      "**/*.min.css",
       "**/static/**/*.*",
       "**/staticfiles/css/*.*"
     ]
