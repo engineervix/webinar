@@ -1,8 +1,6 @@
 # webinar
 
-> A django powered project.
-
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+> A simple webinar registration management tool, with calendar integration and instant organizer notifications.
 
 [![python3](https://img.shields.io/badge/python-3.12-brightgreen.svg)](https://python.org/)
 [![Node v20](https://img.shields.io/badge/Node-v20-teal.svg)](https://nodejs.org/en/blog/release/v20.0.0)
@@ -32,6 +30,7 @@
 This is a [Python](https://www.python.org/) project built using [Django](https://www.djangoproject.com/).
 
 - As with most web projects, the frontend dependencies, tasks, etc. are managed using [Node.js](https://nodejs.org/). This project uses [Webpack](https://webpack.js.org/) to bundle frontend assets.
+- UI: [Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
 - Tests via [pytest](https://pytest.org/)
 - Linting and formatting:
   - _python_: [Black](https://black.readthedocs.io/) and [ruff](https://github.com/astral-sh/ruff)
