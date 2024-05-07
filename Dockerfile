@@ -10,6 +10,11 @@ COPY package*.json .babelrc.js webpack.config.js postcss.config.js tailwind.conf
 RUN npm ci --no-optional --no-audit --progress=false --network=host
 
 COPY ./webinar/assets ./webinar/assets
+
+# we need these so tailwind can detect the utility classes
+COPY ./webinar/home ./webinar/home
+COPY ./webinar/templates ./webinar/templates
+
 RUN npm run build:prod
 
 #################################################################################
