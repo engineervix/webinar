@@ -7,6 +7,9 @@ CHANGELOG.md
 # **/**/*.html
 # **/**/*.mjml
 
+# Ignore minified files
+*.min.css
+
 # Ignore images
 **/assets/img/**/*.*
 
