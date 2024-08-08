@@ -82,7 +82,7 @@ python_tests:
   stage: test
   image: python:3.12-slim-bookworm
   services:
-    - postgres:15.6
+    - postgres:16.4
   variables:
     POSTGRES_DB: test_postgres_db
     POSTGRES_USER: test_postgres_user
