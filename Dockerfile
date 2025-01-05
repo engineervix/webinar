@@ -104,7 +104,10 @@ RUN poetry install
 # RUN python manage.py collectstatic --noinput --clear
 
 # Runtime command that executes when "docker run" is called
-CMD gunicorn webinar.wsgi:application
+# guicorn will:
+#   - use the settings defined in gunicorn.conf.py
+#   - make use of PORT and WEB_CONCURRENCY
+CMD ["gunicorn"]
 
 #################################################################################
 # The next steps won't be run in production
