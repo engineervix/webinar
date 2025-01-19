@@ -17,7 +17,7 @@ django = { version = ">=5.0,<5.1", extras = ["argon2", "bcrypt"] }
 psycopg2 = "^2.9.9"
 
 # Django Extensions
-django-environ = "0.11.2"
+django-environ = "0.12.0"
 django-extensions = "3.2.3"
 django-hcaptcha = "^0.2.0"
 django-mjml = "1.3"
