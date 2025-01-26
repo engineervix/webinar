@@ -750,18 +750,18 @@ files = [
 
 [[package]]
 name = "django"
-version = "5.0.6"
+version = "5.1.5"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "Django-5.0.6-py3-none-any.whl", hash = "sha256:8363ac062bb4ef7c3f12d078f6fa5d154031d129a15170a1066412af49d30905"},
-    {file = "Django-5.0.6.tar.gz", hash = "sha256:ff1b61005004e476e0aeea47c7f79b85864c70124030e95146315396f1e7951f"},
+    {file = "Django-5.1.5-py3-none-any.whl", hash = "sha256:c46eb936111fffe6ec4bc9930035524a8be98ec2f74d8a0ff351226a3e52f459"},
+    {file = "Django-5.1.5.tar.gz", hash = "sha256:19bbca786df50b9eca23cee79d495facf55c8f5c54c529d9bf1fe7b5ea086af3"},
 ]
 
 [package.dependencies]
 argon2-cffi = {version = ">=19.1.0", optional = true, markers = "extra == \"argon2\""}
-asgiref = ">=3.7.0,<4"
+asgiref = ">=3.8.1,<4"
 bcrypt = {version = "*", optional = true, markers = "extra == \"bcrypt\""}
 sqlparse = ">=0.3.1"
 tzdata = {version = "*", markers = "sys_platform == \"win32\""}
@@ -3109,4 +3109,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~=3.12"
-content-hash = "89612a55658352076403d1f95af052da9744cd9ec60d056f8dd7d6d0c23ab57b"
+content-hash = "7b650805211fc9ae000c0c0a1434bb27191aff598a80f3de4f8c0256c0e5f822"
