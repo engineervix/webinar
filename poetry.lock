@@ -526,13 +526,13 @@ files = [
 
 [[package]]
 name = "commitizen"
-version = "3.31.0"
+version = "4.1.1"
 description = "Python commitizen client tool"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "commitizen-3.31.0-py3-none-any.whl", hash = "sha256:a28df7ab5b8665d48796c422a97dcfae0d0fce7e2d28404c0e386cf1ebd42c8f"},
-    {file = "commitizen-3.31.0.tar.gz", hash = "sha256:6ab973e91d07c1e745c6c0efe6dd0708b1f6d8fd7e4ab5e7c773b5ceb3df4ff0"},
+    {file = "commitizen-4.1.1-py3-none-any.whl", hash = "sha256:fdb5c7e72581b8bf568ae23a0342a1dce2c8e954a276b188320eb242290c223d"},
+    {file = "commitizen-4.1.1.tar.gz", hash = "sha256:a2ce2fa0c7960939f48ea01ae2e6db541904e74ef151b8f9dc35c67dbd9b03ac"},
 ]
 
 [package.dependencies]
@@ -3109,4 +3109,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~=3.12"
-content-hash = "89612a55658352076403d1f95af052da9744cd9ec60d056f8dd7d6d0c23ab57b"
+content-hash = "269e7ab750ea1551bfde3a022d179a75a63cf9eac917c1c40e94f2c78b3fc8f2"
