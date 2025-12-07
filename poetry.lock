@@ -873,17 +873,17 @@ files = [
 
 [[package]]
 name = "django-mjml"
-version = "1.3"
+version = "1.4"
 description = "Use MJML in Django templates"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "django_mjml-1.3-py3-none-any.whl", hash = "sha256:a8eb15f32b6a9c497da48bff36e998b61dcf9bca2c44f3d98c7517e9edd06fe6"},
-    {file = "django_mjml-1.3.tar.gz", hash = "sha256:d6d2f6cf664f2f7d7e42e12dd1587a45545a7f43393b8dc1a574382975150516"},
+    {file = "django_mjml-1.4-py3-none-any.whl", hash = "sha256:09dc440fcec64f3656b17646439336e6c15c5987103dfb6fe23eb1f1bf734d11"},
+    {file = "django_mjml-1.4.tar.gz", hash = "sha256:a805b3721de92a4972bb6bd4a3bffa91579420e48297a55f3ffef6d8e926b0b4"},
 ]
 
 [package.dependencies]
-django = ">=2.2,<5.2"
+django = ">=2.2,<5.3"
 
 [package.extras]
 requests = ["requests (>=2.24)"]
@@ -3131,4 +3131,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~=3.12"
-content-hash = "89612a55658352076403d1f95af052da9744cd9ec60d056f8dd7d6d0c23ab57b"
+content-hash = "564c256c1e0ac4352fc75a100080dc045f92d272c14851f6ea7d23e9854afdde"
