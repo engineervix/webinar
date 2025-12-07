@@ -572,20 +572,6 @@ termcolor = ">=1.1,<3"
 tomlkit = ">=0.5.3,<1.0.0"
 
 [[package]]
-name = "commonmark"
-version = "0.9.1"
-description = "Python parser for the CommonMark Markdown spec"
-optional = false
-python-versions = "*"
-files = [
-    {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
-    {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
-]
-
-[package.extras]
-test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
-
-[[package]]
 name = "coverage"
 version = "7.5.1"
 description = "Code coverage measurement for Python"
@@ -1004,22 +990,23 @@ tqdm = ">=4.62.2"
 
 [[package]]
 name = "dslr"
-version = "0.4.0"
+version = "0.6.0"
 description = "Take lightning fast snapshots of your local Postgres databases."
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = "<4.0,>=3.9"
 files = [
-    {file = "DSLR-0.4.0.tar.gz", hash = "sha256:32d132628de5767ed3fe2bfdd755374dd76da1fbe3b0b56c4c489ced1365e8f5"},
-    {file = "dslr-0.4.0-py3-none-any.whl", hash = "sha256:782fbc58366a14abcaeaa8fc4f88a2bd8a31151fa7159e40016406a56011c036"},
+    {file = "dslr-0.6.0-py3-none-any.whl", hash = "sha256:3accbc79f53c3bfd0a0792147fc907b28c88b3444c8617ca6fb33db98b7120c3"},
+    {file = "dslr-0.6.0.tar.gz", hash = "sha256:e8c8ce2f51f979761def676c71c442711e1dd7c5e8638f32d1118860ed6550ad"},
 ]
 
 [package.dependencies]
 click = ">=8.1.3,<9.0.0"
-rich = ">=12.5.1,<13.0.0"
+rich = ">=13.8.1,<14.0.0"
 timeago = ">=1.0.15,<2.0.0"
 tomli = ">=2.0.1,<3.0.0"
 
 [package.extras]
+psycopg = ["psycopg (>=3.1.14,<4.0.0)"]
 psycopg2 = ["psycopg2 (>=2.9.3,<3.0.0)"]
 psycopg2-binary = ["psycopg2-binary (>=2.9.3,<3.0.0)"]
 
@@ -1678,6 +1665,29 @@ docs = ["mdx-gh-links (>=0.2)", "mkdocs (>=1.5)", "mkdocs-gen-files", "mkdocs-li
 testing = ["coverage", "pyyaml"]
 
 [[package]]
+name = "markdown-it-py"
+version = "4.0.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "markdown_it_py-4.0.0-py3-none-any.whl", hash = "sha256:87327c59b172c5011896038353a81343b6754500a08cd7a4973bb48c6d578147"},
+    {file = "markdown_it_py-4.0.0.tar.gz", hash = "sha256:cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"},
+]
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+
+[package.extras]
+benchmarking = ["psutil", "pytest", "pytest-benchmark"]
+compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "markdown-it-pyrs", "mistletoe (>=1.0,<2.0)", "mistune (>=3.0,<4.0)", "panflute (>=2.3,<3.0)"]
+linkify = ["linkify-it-py (>=1,<3)"]
+plugins = ["mdit-py-plugins (>=0.5.0)"]
+profiling = ["gprof2dot"]
+rtd = ["ipykernel", "jupyter_sphinx", "mdit-py-plugins (>=0.5.0)", "myst-parser", "pyyaml", "sphinx", "sphinx-book-theme (>=1.0,<2.0)", "sphinx-copybutton", "sphinx-design"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions", "requests"]
+
+[[package]]
 name = "markupsafe"
 version = "2.1.5"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -1744,6 +1754,17 @@ files = [
     {file = "MarkupSafe-2.1.5-cp39-cp39-win32.whl", hash = "sha256:00e046b6dd71aa03a41079792f8473dc494d564611a8f89bbbd7cb93295ebdcf"},
     {file = "MarkupSafe-2.1.5-cp39-cp39-win_amd64.whl", hash = "sha256:fa173ec60341d6bb97a89f5ea19c85c5643c1e7dedebc22f5181eb73573142c5"},
     {file = "MarkupSafe-2.1.5.tar.gz", hash = "sha256:d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"},
+]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
+    {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
 ]
 
 [[package]]
@@ -2753,21 +2774,21 @@ rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
 
 [[package]]
 name = "rich"
-version = "12.6.0"
+version = "13.9.4"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 optional = false
-python-versions = ">=3.6.3,<4.0.0"
+python-versions = ">=3.8.0"
 files = [
-    {file = "rich-12.6.0-py3-none-any.whl", hash = "sha256:a4eb26484f2c82589bd9a17c73d32a010b1e29d89f1604cd9bf3a2097b81bb5e"},
-    {file = "rich-12.6.0.tar.gz", hash = "sha256:ba3a3775974105c221d31141f2c116f4fd65c5ceb0698657a11e9f295ec93fd0"},
+    {file = "rich-13.9.4-py3-none-any.whl", hash = "sha256:6049d5e6ec054bf2779ab3358186963bac2ea89175919d699e378b99738c2a90"},
+    {file = "rich-13.9.4.tar.gz", hash = "sha256:439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"},
 ]
 
 [package.dependencies]
-commonmark = ">=0.9.0,<0.10.0"
-pygments = ">=2.6.0,<3.0.0"
+markdown-it-py = ">=2.2.0"
+pygments = ">=2.13.0,<3.0.0"
 
 [package.extras]
-jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
+jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "rq"
@@ -3131,4 +3152,4 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~=3.12"
-content-hash = "564c256c1e0ac4352fc75a100080dc045f92d272c14851f6ea7d23e9854afdde"
+content-hash = "387a8a98a12e8a184b336c03bf420bf0c00d4e1b9db38ee51eea8efb83143bea"
