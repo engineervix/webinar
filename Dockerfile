@@ -2,7 +2,7 @@
 # use node:20.12-bookworm as the base image for building the frontend
 #################################################################################
 
-FROM node:20.12-bookworm as frontend-builder
+FROM node:20.19-bookworm as frontend-builder
 
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
