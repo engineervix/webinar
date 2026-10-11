@@ -32,7 +32,7 @@ cache:
 
 ruff:
   stage: lint
-  image: python:3.12-slim-bookworm
+  image: python:3.14-slim-bookworm
   before_script:
     - pip install ruff
   script:
@@ -40,14 +40,14 @@ ruff:
 
 black:
   stage: lint
-  image: python:3.12-slim-bookworm
+  image: python:3.14-slim-bookworm
   before_script:
     - pip install black
   script:
     - black . --check
 
 djlint:
-  image: python:3.12-slim-bookworm
+  image: python:3.14-slim-bookworm
   stage: lint
   before_script:
     - pip install djlint
@@ -80,7 +80,7 @@ prettier:
 
 python_tests:
   stage: test
-  image: python:3.12-slim-bookworm
+  image: python:3.14-slim-bookworm
   services:
     - postgres:15.6
   variables:
@@ -140,7 +140,7 @@ python_tests:
 
 prepare:
   stage: prepare # This stage must run before the release stage
-  image: python:3.12-slim-bookworm
+  image: python:3.14-slim-bookworm
   rules:
     - if: $CI_COMMIT_TAG
   script:
@@ -172,7 +172,7 @@ release:
 
 # https://docs.gitlab.com/ee/user/project/pages/pages_access_control.html
 pages:
-  image: python:3.12-slim-bookworm
+  image: python:3.14-slim-bookworm
   stage: pages
   variables:
     GIT_DEPTH: 0
